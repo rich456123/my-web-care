@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="webping.css">
+    <script type="text/javascript" src="webping.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="logo">PINGBOX</h1>
+
+            <nav>
+                <a href="#">HOME</a>
+            </nav>
+
+            <button class="btn-signed">SIGNUP</button>
+        </header>
+
+        <main>
+            <div class="content">
+                <div class="button">
+                    <div class="button-grid" id="buttonGrid">
+                        <div class="btn-item btn-pro-info" data-modal="pro-info">PROJECT INFORMATION &gt;</div>
+                        <div class="btn-item btn-scop-wo" data-modal="scop-wo">SCOPE OF WORK &gt;</div>
+                        <div class="btn-item btn-net-arc" data-modal="net-arc">NETWORK ARCHITECTURE &gt;</div>
+                        <div class="btn-item btn-net-dev" data-modal="net-dev">NETWORK DEVICE INVENTORY &gt;</div>
+                        <div class="btn-item btn-con-sum" data-modal="con-sum">CONFIGURATION SUMMARY &gt;</div>
+                        <div class="btn-item btn-cir-ser" data-modal="cir-ser">CIRCUIT &amp; SERVICE DETAILS &gt;</div>
+                        <div class="btn-item btn-moni-to" data-modal="moni-to">MONITORING &amp; TOOLS &gt;</div>
+                        <div class="btn-item btn-op-pro" data-modal="op-pro">OPERATION PROCEDURE &gt;</div>
+                        <div class="btn-item btn-know-risk" data-modal="know-risk">KNOWN ISSUES &amp; RISK &gt;</div>
+                        <div class="btn-item btn-acc-acc" data-modal="acc-acc">ACCESS &amp; ACCOUNT &gt;</div>
+                        <div class="btn-item btn-acc-off" data-modal="acc-off">ACCEPTANCE &amp; SIGN-OFF &gt;</div>
+                        <div class="btn-item btn-att-lis" data-modal="att-lis">ATTACHMENT LIST &gt;</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+
+    <div class="modal-overlay" id="modalOverlay-proinfo">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2 id="modalTitle-proinfo">PROJECT INFORMATION</h2>
+                <button class="modal-close" id="modalClose-proinfo" aria-label="Close">X</button>
+            </div>
+
+            <form id="modalForm-proinfo">
+                <div class="row">
+                    <span class="label-fixed">Project Name: </span>
+                    <input type="text" name="project_name">
+                </div>
+
+                <div class="row">
+                    <span class="label-fixed">Customer / Organization:  </span>
+                    <input type="text" name="customer_name">
+                </div>
+
+                <div class="row">
+                    <span class="label-fixed">Project Owner:</span>
+                    <input type="text" name="owner_name">
+                </div>
+
+                <div class="row">
+                    <span class="label-fixed">Project Period: </span>
+                    <input type="text" name="period_name">
+                </div>
+
+                <div class="row">
+                    <span class="label-fixed">Transfer Date: </span>
+                    <input type="date" name="date">
+                </div>
+
+                <div class="row">
+                    <span class="label-fixed">Vendor or Partner: </span>
+                    <input type="text" name="vendor_or_partner">
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" id="modalCancel-proinfo" class="btn-cancel">Cancel</button>
+                    <button type="submit" class="btn-save">Save</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+
+    
+
+    <div class="modal-overlay" id="modalOverlay-scopwo">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2 id="modalTitle-scopwo">SCOPE OF WORK</h2>
+                <button class="modal-close" id="modalClose-scopwo" aria-label="Close">X</button>
+            </div>
+
+            <form id="modalForm-scopwo">
+                <div class="row">
+                    <a class="folder-btn" href="#" target="_blank">Network Design & Deployment Plan</a>
+                </div>
+
+                <div class="row">
+                    <details class="dropdown">
+                        <summary>Equipment Install</summary>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-menu-rout" href="#" target="_blank">Router</a>
+                            <a class="dropdown-menu-switc" href="#" target="_blank">Switch</a>
+                            <a class="dropdown-menu-fire" href="#" target="_blank">Firewall</a>
+                            <a class="dropdown-menu-access" href="#" target="_blank">Access Point</a>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="row">
+                    <details class="dropdown">
+                        <summary>Circuit Connection</summary>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-menu-wan" href="#" target="_blank">WAN</a>
+                            <a class="dropdown-menu-inter" href="#" target="_blank">Internet</a>
+                            <a class="dropdown-menu-mpls" href="#" target="_blank">MPLS</a>
+                            <a class="dropdown-menu-dark" href="#" target="_blank">Dark Fiber</a>
+                        </div>
+                    </details>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+
+    <div class="modal-overlay" id="modalOverlay-netarc">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2 id="modalTitle-netarc">NETWORK ARCHITECTURE</h2>
+                <button class="modal-close" id="modalClose-netarc" aria-label="Close">X</button>
+            </div>
+
+            <form id="modalForm-netarc">
+                <div class="row">
+                    <div class="fol-menu">
+                        <a class="folder-btn-top" href="#" target="_blank">Topology Overview</a>
+                        <a class="folder-btn-dia" href="#" target="_blank">Network Diagram</a>
+                        <a class="folder-btn-config" href="#" target="_blank">Configuration Backup</a>
+                        <a class="folder-btn-as" href="#" target="_blank">As-built Document</a>
+                        <a class="folder-btn-resu" href="#" target="_blank">Test Result</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="modal-overlay" id="modalOverlay-netdev">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2 id="modalTitle-netdev">NETWORK DEVICE INVENTORY</h2>
+                <button class="modal-close" id="modalClose-netdev" aria-label="Close">X</button>
+            </div>
+
+            <form id="modalForm-netdev">
+                <div class="row">
+                    <span class="label-fixed">Software Version: </span>
+                    <input type="text" name="software_ver_name">
+                </div>
+
+                <div class="row">
+                    <span class="label-fixed">License Status: </span>
+                    <input type="text" name="lic_Stat_name">
+                </div>
+
+                <div class="row">
+                    <span class="label-fixed">Warranty / Support Contact: </span>
+                    <input type="text" name="war_sup_name">
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" id="modalCancel-proinfo" class="btn-cancel">Cancel</button>
+                    <button type="submit" class="btn-save">Submit</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay-consum">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2 id="modalTitle-consum">CONFIGURATION SUMMARY</h2>
+                <button class="modal-close" id="modalClose-consum" aria-label="Close">X</button>
+            </div>
+
+            <form id="modalForm-consum">
+                <div class="row">
+                    <details class="dropdown">
+                        <summary>Routing & Switching</summary>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-menu-rocol" href="#" target="_blank">Routing Protocol:Static/OSPF/BGP</a>
+                            <a class="dropdown-menu-vlan" href="#" target="_blank">VLAN/Trunk/Access Port</a>
+                            <a class="dropdown-menu-spee" href="#" target="_blank">Speed/Duplex(Auto/Manual)</a>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="row">
+                    <details class="dropdown">
+                        <summary>Security</summary>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-menu-fp" href="#" target="_blank">Firewall Policy</a>
+                            <a class="dropdown-menu-nv" href="#" target="_blank">NAT/VPN</a>
+                            <a class="dropdown-menu-acl" href="#" target="_blank">ACL</a>
+                        </div>
+                    </details>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="modal-overlay" id="modalOverlay-cirser">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2 id="modalTitle-cirser">NETWORK ARCHITECTURE</h2>
+                <button class="modal-close" id="modalClose-cirser" aria-label="Close">X</button>
+            </div>
+
+            <form id="modalForm-cirser">
+                <div class="row">
+                    <div class="fol-menu">
+                        <a class="folder-btn-cd" href="#" target="_blank">Circuit ID</a>
+                        <a class="folder-btn-pd" href="#" target="_blank">Provider</a>
+                        <a class="folder-btn-bw" href="#" target="_blank">Bandwidth</a>
+                        <a class="folder-btn-T" href="#" target="_blank">Type</a>
+                        <a class="folder-btn-sla" href="#" target="_blank">SLA</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="modal-overlay" id="modalOverlay-monito">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2 id="modalTitle-monito">SCOPE OF WORK</h2>
+                <button class="modal-close" id="modalClose-monito" aria-label="Close">X</button>
+            </div>
+
+            <form id="modalForm-monito">
+                <div class="row">
+                    <details class="dropdown">
+                        <summary>Monitoring System</summary>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-menu-prtg" href="#" target="_blank">PRTG</a>
+                            <a class="dropdown-menu-sola" href="#" target="_blank">SolarWinds</a>
+                            <a class="dropdown-menu-zab" href="#" target="_blank">Zabbix</a>
+                            <a class="dropdown-menu-potai" href="#" target="_blank">Portalista</a>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="row">
+                    <details class="dropdown">
+                        <summary>Alert Type</summary>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-menu-link" href="#" target="_blank">Linkdown</a>
+                            <a class="dropdown-menu-hl" href="#" target="_blank">High Latency</a>
+                            <a class="dropdown-menu-loss" href="#" target="_blank">Packet loss</a>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="row">
+                    <details class="dropdown">
+                        <summary>log</summary>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-menu-log" href="#" target="_blank">Syslog</a>
+                            <a class="dropdown-menu-snmp" href="#" target="_blank">SNMP Trap</a>
+                        </div>
+                    </details>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="modal-overlay" id="modalOverlay-oppro">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2 id="modalTitle-oppro">OPERATION PROCEDURE</h2>
+                <button class="modal-close" id="modalClose-oppro" aria-label="Close">X</button>
+            </div>
+
+            <form id="modalForm-oppro">
+                <div class="row">
+                    <details class="dropdown">
+                        <summary>Incident Handling</summary>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-menu-L" href="#" target="_blank">L1--L2--L3 Escalation Flow</a>
+                            <a class="dropdown-menu-slare" href="#" target="_blank">SLA Response Time</a>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="row">
+                    <details class="dropdown">
+                        <summary>Change & Maintenance</summary>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-menu-crp" href="#" target="_blank">Change Request Process</a>
+                            <a class="dropdown-menu-mw" href="#" target="_blank">Maintenance Window</a>
+                        </div>
+                    </details>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <div class="modal-overlay" id="modalOverlay-knowrisk">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2 id="modalTitle-knowrisk">KNOW ISSUES & RISK</h2>
+                <button class="modal-close" id="modalClose-knowrisk" aria-label="Close">X</button>
+            </div>
+
+            <form id="modalForm-knowrisk">
+                <div class="row">
+                    <span class="label-fixed">High loss fiber segment at: </span>
+                    <input type="text" name="loss_fiber_at">
+                </div>
+
+                <div class="row">
+                    <span class="label-fixed">No physical redundancy at: </span>
+                    <input type="text" name="no_physical_at">
+                </div>
+
+                <div class="row">
+                     <a class="folder-btn-pend" href="#" target="_blank">Pending improvement</a>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" id="modalCancel-proinfo" class="btn-cancel">Cancel</button>
+                    <button type="submit" class="btn-save">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <div class="modal-overlay" id="modalOverlay-accacc">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2 id="modalTitle-accacc">SCOPE OF WORK</h2>
+                <button class="modal-close" id="modalClose-accacc" aria-label="Close">X</button>
+            </div>
+
+            <form id="modalForm-accacc">
+                <div class="row">
+                    <details class="dropdown">
+                        <summary>Device Access</summary>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-menu-ssh" href="#" target="_blank">SSH</a>
+                            <a class="dropdown-menu-cone" href="#" target="_blank">Console</a>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="row">
+                    <span class="label-fixed">VPN Access: </span>
+                    <input type="text" name="vpn_a">
+                </div>
+
+                <div class="row">
+                    <details class="dropdown">
+                        <summary>Password Management</summary>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-menu-cyber" href="#" target="_blank">CyberArk</a>
+                            <a class="dropdown-menu-vau" href="#" target="_blank">Vault</a>
+                        </div>
+                    </details>
+                </div>
+
+
+                <div class="modal-footer">
+                    <button type="button" id="modalCancel-proinfo" class="btn-cancel">Cancel</button>
+                    <button type="submit" class="btn-save">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="modal-overlay" id="modalOverlay-accoff">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2 id="modalTitle-accoff">ACCEPTANCE & SIGN-OFF</h2>
+                <button class="modal-close" id="modalClose-accoff" aria-label="Close">X</button>
+            </div>
+
+            <form id="modalForm-accoff">
+                <div class="row">
+                    <span class="label-fixed">Functional Test Completed: </span>
+                    <label><input type="checkbox" name="func_test" value="yes">Yes</label>
+                    <label><input type="checkbox" name="func_test" value="no">No</label>
+                </div>
+
+                <div class="row">
+                    <span class="label-fixed">Failover Test Completed:  </span>
+                    <label><input type="checkbox" name="fail_test" value="yes">Yes</label>
+                    <label><input type="checkbox" name="fail_test" value="no">No</label>
+                </div>
+
+                <div class="row">
+                    <span class="label-fixed">Customer Acceptance:</span>
+                    <label><input type="checkbox" name="cust_acc" value="yes">Yes</label>
+                    <label><input type="checkbox" name="cust_acc" value="no">No</label>
+                </div>
+
+                <div class="row">
+                    <span class="label-fixed">Project Team: </span>
+                    <input type="text" name="project_team">
+                </div>
+
+                <div class="row">
+                    <span class="label-fixed">Operation Team: </span>
+                    <input type="text" name="oper_team">
+                </div>
+
+                <div class="row">
+                    <span class="label-fixed">Date: </span>
+                    <input type="date" name="date">
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" id="modalCancel-proinfo" class="btn-cancel">Cancel</button>
+                    <button type="submit" class="btn-save">Submit</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+
+    <div class="modal-overlay" id="modalOverlay-attlis">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2 id="modalTitle-attlis">Attachment List</h2>
+                <button class="modal-close" id="modalClose-attlis" aria-label="Close">X</button>
+            </div>
+
+            <form id="modalForm-attlis">
+                <div class="row">
+                    <div class="fol-menu">
+                        <a class="folder-btn-net_diagr" href="#" target="_blank">Network Diagram</a>
+                        <a class="folder-btn-cb" href="#" target="_blank">Configuration Backup</a>
+                        <a class="folder-btn-ad" href="#" target="_blank">As-built Document</a>
+                        <a class="folder-btn-ir" href="#" target="_blank">Installation Report</a>
+                        <a class="folder-btn-ri" href="#" target="_blank">Rack Installation</a>
+                        <a class="folder-btn-wh" href="#" target="_blank">WIFI Heatmap</a>
+                        <a class="folder-btn-flp" href="#" target="_blank">Floor plan</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

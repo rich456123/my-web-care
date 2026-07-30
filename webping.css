@@ -1,0 +1,1283 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Poppins, 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: black;
+    color: rgb(23, 225, 171);
+    min-height: 100vh;
+    line-height: 1.5; 
+}
+
+.container{
+    position:relative;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 2rem;
+    overflow: hidden;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5rem;
+    z-index: 999;
+}
+
+header h1{
+    margin: 0;
+    font-size: 4rem;
+    font: 600;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    margin-left: 2%;
+}
+
+nav a{
+    font-size: 2.5rem;
+    letter-spacing: 0.1rem;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    z-index: 999;
+}
+
+nav a:hover{
+    color: rgb(247, 249, 248);
+}
+
+.btn-signed{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.btn-signed:hover{
+    color: aquamarine;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: calc(90vh-6rem);
+}
+
+.button-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 5.5rem;
+    margin: 3rem auto;
+    max-width: 95%;
+    column-gap: 5.5rem;
+    padding: 0 2rem;
+    
+}
+
+.btn-item{
+    position: relative;
+    height: 60px;
+    width: auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    font-size: 2.96rem;
+    letter-spacing: 0.05rem;
+    white-space: nowrap;
+    cursor: pointer;
+    color: #fff;
+    background: #0a0a0a;
+    z-index: 0;
+    transition: color 0.3s ease;
+}
+
+.btn-item::before{
+    content: "";
+    position: absolute;
+    inset: -4px;                
+    border-radius: 50px;
+    padding: 4px;               
+    background: conic-gradient(from var(--angle),
+        #024534, #177c7c, #4dadb7, #85f1cd, #4dadb7, #177c7c);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+    filter: blur(3px) drop-shadow(0 0 10px rgba(13, 202, 158, 0.6));
+    animation: spinGlow 3s linear infinite;
+    scale: 1.05;
+}
+
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes spinGlow{
+    to{ --angle: 360deg; }
+}
+
+.btn-item:hover{
+    color: aquamarine;
+    scale: 1.05;
+}
+
+.btn-item:hover::before{
+    filter: blur(4px) drop-shadow(0 0 16px rgba(42, 189, 121, 0.8));
+}
+
+.btn-item:focus-visible{
+    outline: 4px solid aquamarine;
+    outline-offset: 4px;
+}
+
+.modal-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(3px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    padding: 1.5rem;
+}
+
+.modal-overlay.active{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-box{
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    max-height: 85vh;
+    overflow-y: auto;
+    background: #0a0a0a;
+    border-radius: 25px;
+    border: 1px solid rgba(23, 225, 171, 0.4);
+    box-shadow: 0 0 40px rgba(13, 202, 158, 0.25);
+    padding: 2rem 2.2rem 2.2rem;
+    transform: translateY(20px) scale(0.97);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-box{
+    transform: translateY(0) scale(1);
+}
+
+.modal-header h2{
+    font-size: 1.4rem;
+    letter-spacing: 0.03rem;
+    color: #fff;
+}
+
+.modal-close{
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+
+}
+
+.modal-close:hover{
+    background: rgba(255, 99, 99, 0.15);
+    border-color: rgba(255, 99, 99, 0.6);
+    color: #ff6363;
+    justify-content: flex-end;
+}
+
+.row{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1.1rem;
+}
+
+.label-fixed{
+    font-size: 0.85rem;
+    color: rgba(23, 225, 171, 0.85);
+    letter-spacing: 0.02rem;
+}
+
+.row input{
+    background: #141414;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    padding: 0.65rem 0.9rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.row input:focus{
+    outline: none;
+    border-color: aquamarine;
+}
+
+.modal-footer{
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+}
+
+.btn-save{
+    background: rgba(23, 225, 171);
+    width: 100%;
+    height: 100%;
+    color: #000;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: opacity 0.3s ease;
+}
+
+.btn-save:hover{
+    opacity: 0.85;
+}
+
+.btn-cancel{
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    color:  #ccc;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-cancel:hover{
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #fff;
+}
+
+@media(max-width: 900px){
+    .button-grid{ grid-template-columns: repeat(2, 1fr);}
+}
+
+@media(max-width: 600px){
+    .button-grid{grid-template-columns: 1fr;}
+    header{padding: 1rem 1.5rem;}
+}
+
+.modal-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: auto;
+}
+
+.folder-btn{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+
+}
+
+.folder-btn:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.dropdown-menu{
+     display: grid;
+     grid-template-columns: repeat(1, 4fr); 
+     column-gap: 4.5rem;
+     gap: 2.5rem;
+     margin-top: 2rem;
+     margin-bottom: 2rem;
+     letter-spacing: 0.1rem;
+}
+
+.dropdown-menu-rout{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.dropdown-menu-rout:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.dropdown-menu-switc{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.dropdown-menu-switc:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.dropdown-menu-fire{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.dropdown-menu-fire:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.dropdown-menu-access{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.dropdown-menu-access:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.dropdown-menu-wan{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.dropdown-menu-wan:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.dropdown-menu-inter{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.dropdown-menu-inter:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.dropdown-menu-mpls{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.dropdown-menu-mpls:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.dropdown-menu-dark{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.dropdown-menu-dark:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.fol-menu{
+    display: grid;
+    grid-template-columns: repeat(1, 5fr); 
+    column-gap: 4.5rem;
+    gap: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.1rem;
+
+}
+
+.folder-btn-top{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.folder-btn-top:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.folder-btn-dia{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.folder-btn-dia:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.folder-btn-config{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.folder-btn-config:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.folder-btn-as{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.folder-btn-as:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.folder-btn-resu{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.folder-btn-resu:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.dropdown-menu-rocol{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.dropdown-menu-rocol:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.dropdown-menu-vlan{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.dropdown-menu-vlan:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.dropdown-menu-spee{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.dropdown-menu-spee:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.dropdown-menu-fp{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.dropdown-menu-fp:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.dropdown-menu-nv{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.dropdown-menu-nv:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.dropdown-menu-acl{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.dropdown-menu-acl:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+
+.folder-btn-cd{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.folder-btn-cd:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+
+.folder-btn-pd{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.folder-btn-pd:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+
+.folder-btn-bw{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.folder-btn-bw:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+
+.folder-btn-T{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.folder-btn-T:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+
+.folder-btn-sla{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.folder-btn-sla:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+
+.dropdown-menu-prtg{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.dropdown-menu-prtg:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.dropdown-menu-sola{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.dropdown-menu-sola:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.dropdown-menu-zab{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.dropdown-menu-zab:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.dropdown-menu-potai{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.dropdown-menu-potai:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.dropdown-menu-link{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.dropdown-menu-link:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.dropdown-menu-hl{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.dropdown-menu-hl:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.dropdown-menu-loss{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.dropdown-menu-loss:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.dropdown-menu-log{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.dropdown-menu-log:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+
+.dropdown-menu-snmp{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.dropdown-menu-snmp:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.dropdown-menu-L{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.dropdown-menu-L:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.dropdown-menu-slare{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.dropdown-menu-slare:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.dropdown-menu-crp{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.dropdown-menu-crp:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.dropdown-menu-mw{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.dropdown-menu-mw:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.folder-btn-pend{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.folder-btn-pend:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.dropdown-menu-ssh{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.dropdown-menu-ssh:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+
+.dropdown-menu-cone{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.dropdown-menu-cone:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+
+.dropdown-menu-cyber{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.dropdown-menu-cyber:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+
+.dropdown-menu-vau{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.dropdown-menu-vau:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+
+.folder-btn-net_diagr{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.folder-btn-net_diagr:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.folder-btn-cb{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.folder-btn-cb:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+
+.folder-btn-ad{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.folder-btn-ad:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+
+.folder-btn-ir{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.folder-btn-ir:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+
+.folder-btn-ri{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.folder-btn-ri:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+.folder-btn-wh{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.folder-btn-wh:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
+
+
+.folder-btn-flp{
+    color: black;
+    background-color: #e7e7e7;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.folder-btn-flp:hover{
+    color: aquamarine;
+    scale: 0.95;
+}
