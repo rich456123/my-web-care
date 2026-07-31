@@ -17,7 +17,6 @@ body{
     margin: 0 auto;
     width: 100%;
     padding: 0 2rem;
-    overflow: hidden;
 }
 
 header{
@@ -25,28 +24,32 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5rem;
-    z-index: 999;
 }
 
 header h1{
     margin: 0;
-    font-size: 4rem;
-    font: 600;
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
 }
 
 nav{
     display: flex;
     align-items: center;
-    margin-left: 2%;
+    margin-left: -5.5%;
 }
 
 nav a{
-    font-size: 2.5rem;
+    font-size: 1.2rem;
     letter-spacing: 0.1rem;
     transition: color 0.3s ease;
     text-decoration: none;
     color: inherit;
     z-index: 999;
+}
+
+main{
+    padding: 2rem 3rem 4rem;
 }
 
 nav a:hover{
@@ -56,18 +59,18 @@ nav a:hover{
 .btn-signed{
     color: black;
     background-color: #e7e7e7;
-    padding: 0.8rem 2rem;
+    padding: 0.6rem 1.5rem;
     border-radius: 50px;
     border: none;
     font-size: 1rem;
     font-weight: 700;
     transition: background-color 0.3s ease;
     cursor: pointer;
-    z-index: 999;
+    
 }
 
 .btn-signed:hover{
-    color: aquamarine;
+    color: rgb(6, 87, 59);
 }
 
 main{
@@ -80,30 +83,29 @@ main{
 .button-grid{
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
-    gap: 5.5rem;
-    margin: 3rem auto;
-    max-width: 95%;
-    column-gap: 5.5rem;
-    padding: 0 2rem;
-    
+    gap: 5rem 5rem;
+    margin: 2rem auto 0;
+    max-width: 1400px; 
 }
 
 .btn-item{
     position: relative;
     height: 60px;
     width: auto;
-    padding: 0 1.5rem;
+    padding: 0 1.8rem;
     display: flex;
     align-items: center;
     border-radius: 50px;
-    font-size: 2.96rem;
-    letter-spacing: 0.05rem;
+    font-size: 1.3rem;
+    letter-spacing: 0.03rem;
     white-space: nowrap;
     cursor: pointer;
     color: #fff;
     background: #0a0a0a;
     z-index: 0;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.2s ease;
+    text-align: left;
+    font-family: inherit;
 }
 
 .btn-item::before{
@@ -161,6 +163,7 @@ main{
     pointer-events: none;
     transition: opacity 0.3s ease;
     padding: 1.5rem;
+    z-index: 1000;
 }
 
 .modal-overlay.active{
@@ -171,7 +174,7 @@ main{
 .modal-box{
     position: relative;
     width: 100%;
-    max-width: 520px;
+    max-width: 800px;
     max-height: 85vh;
     overflow-y: auto;
     background: #0a0a0a;
@@ -188,7 +191,7 @@ main{
 }
 
 .modal-header h2{
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     letter-spacing: 0.03rem;
     color: #fff;
 }
@@ -223,7 +226,7 @@ main{
 }
 
 .label-fixed{
-    font-size: 0.85rem;
+    font-size: 1rem;
     color: rgba(23, 225, 171, 0.85);
     letter-spacing: 0.02rem;
 }
@@ -253,11 +256,11 @@ main{
 
 .btn-save{
     background: rgba(23, 225, 171);
-    width: 100%;
-    height: 100%;
+    width: 20.5rem;
+    height: 4.5rem;
     color: #000;
     border-radius: 50px;
-    font-weight: 700;
+    font-weight: 2000;
     transition: opacity 0.3s ease;
 }
 
@@ -267,9 +270,10 @@ main{
 
 .btn-cancel{
     background: transparent;
-    width: 100%;
-    height: 100%;
+    width: 20.5rem;
+    height: 4.5rem;
     border-radius: 50px;
+    font-weight: 2000;
     color:  #ccc;
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -311,7 +315,7 @@ main{
 }
 
 .folder-btn:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -340,7 +344,7 @@ main{
 }
 
 .dropdown-menu-rout:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -359,7 +363,7 @@ main{
 }
 
 .dropdown-menu-switc:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -378,7 +382,7 @@ main{
 }
 
 .dropdown-menu-fire:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -397,7 +401,7 @@ main{
 }
 
 .dropdown-menu-access:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -416,7 +420,7 @@ main{
 }
 
 .dropdown-menu-wan:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -435,7 +439,7 @@ main{
 }
 
 .dropdown-menu-inter:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -454,7 +458,7 @@ main{
 }
 
 .dropdown-menu-mpls:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -473,7 +477,7 @@ main{
 }
 
 .dropdown-menu-dark:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -503,7 +507,7 @@ main{
 }
 
 .folder-btn-top:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -522,7 +526,7 @@ main{
 }
 
 .folder-btn-dia:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -541,7 +545,7 @@ main{
 }
 
 .folder-btn-config:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -560,7 +564,7 @@ main{
 }
 
 .folder-btn-as:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -579,7 +583,7 @@ main{
 }
 
 .folder-btn-resu:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -598,7 +602,7 @@ main{
 }
 
 .dropdown-menu-rocol:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -617,7 +621,7 @@ main{
 }
 
 .dropdown-menu-vlan:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -636,7 +640,7 @@ main{
 }
 
 .dropdown-menu-spee:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -655,7 +659,7 @@ main{
 }
 
 .dropdown-menu-fp:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -674,7 +678,7 @@ main{
 }
 
 .dropdown-menu-nv:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -693,7 +697,7 @@ main{
 }
 
 .dropdown-menu-acl:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -713,7 +717,7 @@ main{
 }
 
 .folder-btn-cd:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -733,7 +737,7 @@ main{
 }
 
 .folder-btn-pd:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -753,7 +757,7 @@ main{
 }
 
 .folder-btn-bw:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -773,7 +777,7 @@ main{
 }
 
 .folder-btn-T:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -793,7 +797,7 @@ main{
 }
 
 .folder-btn-sla:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -813,7 +817,7 @@ main{
 }
 
 .dropdown-menu-prtg:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -832,7 +836,7 @@ main{
 }
 
 .dropdown-menu-sola:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -851,7 +855,7 @@ main{
 }
 
 .dropdown-menu-zab:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -870,7 +874,7 @@ main{
 }
 
 .dropdown-menu-potai:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -889,7 +893,7 @@ main{
 }
 
 .dropdown-menu-link:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -908,7 +912,7 @@ main{
 }
 
 .dropdown-menu-hl:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -927,7 +931,7 @@ main{
 }
 
 .dropdown-menu-loss:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -946,7 +950,7 @@ main{
 }
 
 .dropdown-menu-log:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -966,7 +970,7 @@ main{
 }
 
 .dropdown-menu-snmp:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -985,7 +989,7 @@ main{
 }
 
 .dropdown-menu-L:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -1004,7 +1008,7 @@ main{
 }
 
 .dropdown-menu-slare:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -1023,7 +1027,7 @@ main{
 }
 
 .dropdown-menu-crp:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -1042,7 +1046,7 @@ main{
 }
 
 .dropdown-menu-mw:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -1061,7 +1065,7 @@ main{
 }
 
 .folder-btn-pend:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -1080,7 +1084,7 @@ main{
 }
 
 .dropdown-menu-ssh:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -1100,7 +1104,7 @@ main{
 }
 
 .dropdown-menu-cone:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -1120,7 +1124,7 @@ main{
 }
 
 .dropdown-menu-cyber:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -1140,7 +1144,7 @@ main{
 }
 
 .dropdown-menu-vau:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -1160,7 +1164,7 @@ main{
 }
 
 .folder-btn-net_diagr:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -1179,7 +1183,7 @@ main{
 }
 
 .folder-btn-cb:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -1199,7 +1203,7 @@ main{
 }
 
 .folder-btn-ad:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -1219,7 +1223,7 @@ main{
 }
 
 .folder-btn-ir:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -1239,7 +1243,7 @@ main{
 }
 
 .folder-btn-ri:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -1258,7 +1262,7 @@ main{
 }
 
 .folder-btn-wh:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
 
@@ -1278,6 +1282,6 @@ main{
 }
 
 .folder-btn-flp:hover{
-    color: aquamarine;
+    color: rgb(3, 69, 47);
     scale: 0.95;
 }
