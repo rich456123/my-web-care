@@ -256,7 +256,7 @@ main{
 
 .btn-save{
     background: rgba(23, 225, 171);
-    width: 20.5rem;
+    width: 6.5rem;
     height: 4.5rem;
     color: #000;
     border-radius: 50px;
@@ -270,7 +270,7 @@ main{
 
 .btn-cancel{
     background: transparent;
-    width: 20.5rem;
+    width: 6.5rem;
     height: 4.5rem;
     border-radius: 50px;
     font-weight: 2000;
